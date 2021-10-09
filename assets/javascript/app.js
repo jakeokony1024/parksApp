@@ -19,11 +19,11 @@ $(document).ready(function() {
    let latitude    = Math.round(parkData[i].latitude * 1000) / 1000;
    let longitude   = Math.round(parkData[i].longitude * 1000) / 1000;
    let activityList= parkData[i].activities; 
-
+   let cardClass   = 'card-' + i;
 
    //Building out the Card//
    let cardHTML = `
-   <div class="card">
+   <div class="card ${cardClass}" >
     <div class="card-contents">
      <h2 class="card-title">${title}</h2>
      <img class="card-image" src="${parkImgSrc}">
@@ -55,3 +55,5 @@ $(document).ready(function() {
     <p class="card-description"></p>
   </div>
 </div> */}
+
+// <img class="card-image" src="${parkImgSrc}">
