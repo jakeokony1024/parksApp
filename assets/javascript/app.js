@@ -4,15 +4,15 @@ $(document).ready(function () {
  // require('dotenv').config();
 //  console.log(process.env);
  
- // $('#state-selector').on('click', function(){
- // $('.cards-section).detach();
- //  let selectedState = $('#states').find(":selected").val().toLowerCase();
+ $('#state-selector').on('click', function(){
+  $('.cards-section').empty();
+  let selectedState = $('#states').find(":selected").val().toLowerCase();
   $.ajax({
    type: 'GET',
    url: 'https://developer.nps.gov/api/v1/parks?&api_key=' + mykey,
    data: {
     limit: '12',
-    stateCode: 'ca'
+    stateCode: selectedState
    }
   }).then(function (response) {
    const parkData = response.data;
@@ -50,5 +50,5 @@ $(document).ready(function () {
     $('.cards-section').append(cardHTML);
    };
   });
- // })
+ })
 });

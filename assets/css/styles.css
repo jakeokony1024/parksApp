@@ -201,6 +201,16 @@ ul {
   .card-9 { grid-area: 10 / 1 / 11 / 2; }
   .card-10 { grid-area: 11 / 1 / 12 / 2; }
   .card-11 { grid-area: 12 / 1 / 13 / 2; }
+
+  .centered {
+    position: absolute;
+    top: 15%;
+    left: 45%;
+  }
+
+  footer {
+    margin: 320px 0;
+  }
 }
 /* 
 add some shadow, border radius, hover effects on the cards
