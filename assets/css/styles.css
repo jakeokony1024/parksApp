@@ -3,6 +3,13 @@ body {
   background: rgb(184, 184, 184);
   margin: 0;
   height: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
 }
 .hero-image {
   width: 100%;
@@ -13,6 +20,15 @@ a {
 .header-container {
   height: 4em;
   background: rgb(104, 104, 104);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.header-logo {
+  height: 50px;
 }
 .card {
   border: 1px solid black;
@@ -34,6 +50,46 @@ a {
   
 }
 
+.state-selection-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+#state-selector {
+  background-color: #4CAF50; 
+  text-shadow: 1px 1px 4px #000000;
+  border: none;
+  color: whitesmoke;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 1px 1px 18px #888888;
+  border-radius: 2px;
+}
+
+#states {
+  cursor: pointer;
+}
+label {
+  border: none;
+  color: whitesmoke;
+  text-shadow: 1px 1px 4px #000000;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.card-title {
+  text-decoration: underline;
+}
+
 .card-container {
   margin: 20px;
 }
@@ -52,9 +108,10 @@ ul {
   color: whitesmoke;
   text-shadow: 1px 1px 4px #000000;
   position: absolute;
-  top: 25%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 100px !important;
 }
 .title {
   font-family: "Amatic SC", cursive;
@@ -112,11 +169,15 @@ ul {
   width: 50%;
 }
 
+footer {
+  flex-shrink: 0;
+}
+
 .footer-container {
   background: rgb(104, 104, 104);
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 
@@ -124,23 +185,30 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  
 }
 
 .footer-title {
-  display: flex;
-  align-content: flex-start;
-  align-items: flex-start;
+  text-align: center !important;
 }
 
-
+.social-links {
+  float: right;
+}
+.copyright {
+  text-align: left;
+}
+.social-icon {
+  margin: 5px;
+}
 /* Media Queries */
 @media screen and (max-width: 980px) {
   .cards-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    column-gap: 5px;
-    row-gap: 5px;
+    column-gap: 15px;
+    row-gap: 15px;
   }
 
   .card-0 { grid-area: 1 / 1 / 2 / 2; };
@@ -155,6 +223,21 @@ ul {
   .card-9 { grid-area: 4 / 1 / 5 / 2; };
   .card-10 { grid-area: 4 / 2 / 5 / 3; };
   .card-11 { grid-area: 4 / 3 / 5 / 4; };
+
+  .centered {
+    color: whitesmoke;
+    text-shadow: 1px 1px 4px #000000;
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    font-size: 80px !important;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -162,8 +245,8 @@ ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    column-gap: 5px;
-    row-gap: 5px;
+    column-gap: 15px;
+    row-gap: 15px;
   }
 
   .card-0 { grid-area: 1 / 1 / 2 / 2; }
@@ -178,6 +261,21 @@ ul {
   .card-9 { grid-area: 5 / 2 / 6 / 3; }
   .card-10 { grid-area: 6 / 1 / 7 / 2; }
   .card-11 { grid-area: 6 / 2 / 7 / 3; }
+
+  .centered {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .legal-links-container {
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -185,8 +283,8 @@ ul {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(12, 1fr);
-    column-gap: 5px;
-    row-gap: 5px;
+    column-gap: 15px;
+    row-gap: 15px;
   }
 
   .card-0 { grid-area: 1 / 1 / 2 / 2; }
@@ -205,11 +303,17 @@ ul {
   .centered {
     position: absolute;
     top: 15%;
-    left: 45%;
+    left: 50%;
+    font-size: 30px !important;
   }
 
-  footer {
-    margin: 320px 0;
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .legal-links-container {
+    align-items: center;
   }
 }
 /* 

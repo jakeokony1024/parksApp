@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
- var mykey = process.env.API_KEY;
+ var mykey = config.MY_KEY;
  // require('dotenv').config();
 //  console.log(process.env);
  
@@ -36,8 +36,11 @@ $(document).ready(function () {
      <div class="card-contents">
       <h2 class="card-title">${title}</h2>
       <p class="card-description">${description}</p>
-      <span class="location-info">${latitude} N</span>
-      <span class="location-info">${longitude} W</span>
+      <div class="location-container">
+       Location:
+       <span class="location-info">${latitude} N</span>
+       <span class="location-info">${longitude} W</span>
+      </div>
       <div class="activity-list">
        <h4 class="card-title">Available Activities</h4>
        <p>${activities[0]}</p>
