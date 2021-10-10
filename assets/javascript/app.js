@@ -1,11 +1,15 @@
+
 $(document).ready(function () {
- 
+ var mykey = config.MY_KEY;
+ // require('dotenv').config();
+//  console.log(process.env);
  
  // $('#state-selector').on('click', function(){
+ // $('.cards-section).detach();
  //  let selectedState = $('#states').find(":selected").val().toLowerCase();
   $.ajax({
    type: 'GET',
-   url: 'https://developer.nps.gov/api/v1/parks?&api_key=' + API_KEY,
+   url: 'https://developer.nps.gov/api/v1/parks?&api_key=' + mykey,
    data: {
     limit: '12',
     stateCode: 'ca'
