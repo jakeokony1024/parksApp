@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
- var mykey = config.MY_KEY;
+ var mykey = process.env.API_KEY;
  // require('dotenv').config();
 //  console.log(process.env);
  
