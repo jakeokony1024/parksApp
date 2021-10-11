@@ -571,7 +571,7 @@ footer {
   color: whitesmoke;
   text-shadow: 1px 1px 4px #000000;
   position: absolute;
-  top: 45%;
+  top: 30%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
