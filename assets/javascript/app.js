@@ -47,7 +47,7 @@ $(document).ready(function () {
        <p>${activities[1]}</p>
        <p>${activities[2]}</p>
       </div>
-      <a class="park-link" href="${parkLink}"><span class="park-link-text">Visit Homepage</span></a>
+      <span class="park-link-text"><a class="park-link" href="${parkLink}">Visit Homepage</a></span>
      </div>
     </div>`;
     $('.cards-section').append(cardHTML);

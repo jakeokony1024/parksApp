@@ -1,0 +1,89 @@
+.hero-image {
+ width: 100%;
+}
+
+.centered {
+ color: whitesmoke;
+ text-shadow: 1px 1px 4px #000000;
+ position: absolute;
+ top: 45%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ font-size: 100px !important;
+}
+
+.title {
+ font-size: 2em;
+}
+
+label {
+ border: none;
+ color: whitesmoke;
+ text-shadow: 1px 1px 4px #000000;
+ padding: 15px 15px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+}
+ 
+#state-selector {
+ background-color: #4CAF50; 
+ text-shadow: 1px 1px 4px #000000;
+ border: none;
+ color: whitesmoke;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ cursor: pointer;
+ box-shadow: 1px 1px 18px #888888;
+ border-radius: 2px;
+ margin-left: 5px;
+}
+
+#states {
+ cursor: pointer;
+}
+
+.state-selection-container {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+
+}
+
+a {
+ color: #4CAF50;
+ text-decoration: none;
+}
+
+@media screen and (max-width: 980px) {
+ .centered {
+  color: whitesmoke;
+  text-shadow: 1px 1px 4px #000000;
+  position: absolute;
+  top: 15%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-size: 80px !important;
+}
+}
+
+@media screen and (max-width: 768px) {
+ .centered {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+}
+}
+
+@media screen and (max-width: 640px) {
+ .centered {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  font-size: 30px !important;
+}
+}

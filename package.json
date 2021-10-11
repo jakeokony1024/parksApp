@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/jakeokony1024/parksApp/edit/main/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "app.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakeokony1024/parksApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakeokony1024/parksApp/issues"
+  },
+  "homepage": "https://github.com/jakeokony1024/parksApp#readme",
+  "dependencies": {
+    "sass": "^1.42.1"
+  }
+}
