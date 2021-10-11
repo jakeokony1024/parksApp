@@ -477,6 +477,8 @@ footer {
 
 .footer-title {
   text-align: center !important;
+  color: whitesmoke;
+  text-shadow: 1px 1px 4px #000000;
 }
 
 .social-links {
