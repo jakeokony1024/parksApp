@@ -1,11 +1,15 @@
-
+// Wait for Page to Load//
 $(document).ready(function () {
+
  var mykey = config.MY_KEY;
- // require('dotenv').config();
-//  console.log(process.env);
- 
+ //On button click, render list of parks//
+
  $('#state-selector').on('click', function(){
+  //on button click, empty out the card section, to re-populate//
+
   $('.cards-section').empty();
+  //getting value from selected option in dropdown//
+
   let selectedState = $('#states').find(":selected").val().toLowerCase();
   $.ajax({
    type: 'GET',
@@ -18,19 +22,26 @@ $(document).ready(function () {
    const parkData = response.data;
    
    //Getting all Data for each park into variables //
+
    for (let i = 0; i < parkData.length; i++) {
     let parkImgSrc = parkData[i].images[0].url;
     let title = parkData[i].fullName;
     let description = parkData[i].description;
     let parkLink = parkData[i].url;
+    //Rounding up the lat longs//
+
     let latitude = Math.round(parkData[i].latitude * 1000) / 1000;
     let longitude = Math.round(parkData[i].longitude * 1000) / 1000;
     let activityList = parkData[i].activities;
+
+    //Using .map to get the activities list//
     let activities = activityList.map(a => a.name);
+
+    //using iterator to add index to each card for grid layout//
     let cardClass = 'card-' + i;
-    ///set image as full background image cover hide everything except title over middle of park
-    /// on hover full details become visible
-    //Building out the Card//
+    //setting image as full background image of card//
+    //Building out the Card using template Literals//
+    
     let cardHTML = `
     <div class="card ${cardClass}" style="background: url(${parkImgSrc}) no-repeat center; background-size: cover; ">
      <div class="card-contents">
