@@ -10,22 +10,29 @@ $(document).ready(function () {
   
   //getting value from selected option in dropdown//
   let selectedState = $('#states').find(":selected").val().toLowerCase();
+  
+  ajaxRequest(selectedState, mykey);
+ });
+});
+
+function ajaxRequest(state, key) {
+ return new Promise((resolve, reject) => {
   $.ajax({
    type: 'GET',
-   url: 'https://developer.nps.gov/api/v1/parks?&api_key='+mykey,
+   url: 'https://developer.nps.gov/api/v1/parks?&api_key='+key,
    data: {
     limit: '12',
-    stateCode: selectedState
+    stateCode: state
    },
    error: function(xhr, error) {
+    reject(error)
     var errorMessage = xhr.status + ': ' + xhr.statusText;
     console.log('Error -', error);
     alert('Error - ' + errorMessage);
    },
    success: function(response) {
-    const parkData = response.data;  
-    //Getting all Data for each park into variables //
-    
+    resolve(response)
+    const parkData = response.data; 
     for (let i = 0; i < parkData.length; i++) {
      let parkImgSrc = parkData[i].images[0].url;
      let title = parkData[i].fullName;
@@ -68,14 +75,14 @@ $(document).ready(function () {
           <p>${activities[1]}</p>
           <p>${activities[2]}</p>
          </div>
-         <span class="park-link-text"><a class="park-link" href="${parkLink}">Visit Homepage</a></span>
+         <a class="park-link" href="${parkLink}"><span class="park-link-text">Visit Homepage</span></a>
         </div>
        </div>
       </div>
      </div>`;
      $('.cards-section').append(cardHTML);
     };
-   }
-  });
- });
-});
+   } 
+  })
+ })
+}
