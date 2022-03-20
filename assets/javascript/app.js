@@ -11,11 +11,11 @@ $(document).ready(function () {
   //getting value from selected option in dropdown//
   let selectedState = $('#states').find(":selected").val().toLowerCase();
   
-  ajaxRequest(selectedState, mykey);
+  callParksApi(selectedState, mykey);
  });
 });
 
-function ajaxRequest(state, key) {
+function callParksApi(state, key) {
  return new Promise((resolve, reject) => {
   $.ajax({
    type: 'GET',
