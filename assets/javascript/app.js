@@ -1,7 +1,7 @@
 // Wait for Page to Load//
 $(document).ready(function () {
 
- var mykey = config.MY_KEY;
+ const mykey = config.MY_KEY;
  //On button click, render list of parks//
 
  $('#state-selector').on('click', function(){
@@ -16,6 +16,11 @@ $(document).ready(function () {
    data: {
     limit: '12',
     stateCode: selectedState
+   },
+   error: function(xhr, error) {
+    var errorMessage = xhr.status + ': ' + xhr.statusText;
+    console.log('Error -', error);
+    alert('Error - ' + errorMessage);
    },
    success: function(response) {
     const parkData = response.data;  
@@ -41,31 +46,35 @@ $(document).ready(function () {
      //Building out the Card using template Literals//
      
      let cardHTML = `
-     <div class="card ${cardClass}" style="background: url(${parkImgSrc}) no-repeat center; background-size: cover; ">
-      <div class="card-contents">
-       <h2 class="card-title">${title}</h2>
-       <p class="card-description">${description}</p>
-       <div class="location-container">
-        Location:
-        <span class="location-info">${latitude} N</span>
-        <span class="location-info">${longitude} W</span>
+     <div class="card ${cardClass}">
+      <div class="card-inner">
+       <div class="card-front">      
+        <div class="card-front-img-cont">
+         <h2 class="card-title">${title}</h2> 
+         <img src="${parkImgSrc}" class="card-front-image" loading="eager">
+        </div>      
        </div>
-       <div class="activity-list">
-        <h4 class="card-title">Available Activities</h4>
-        <p>${activities[0]}</p>
-        <p>${activities[1]}</p>
-        <p>${activities[2]}</p>
+       <div class="card-back">
+        <div class="card-contents">
+         <p class="card-description">${description}</p>
+         <div class="location-container">
+          Location:
+          <span class="location-info">${latitude} N</span>
+          <span class="location-info">${longitude} W</span>
+         </div>
+         <div class="activity-list">
+          <h4 class="card-title">Available Activities</h4>
+          <p>${activities[0]}</p>
+          <p>${activities[1]}</p>
+          <p>${activities[2]}</p>
+         </div>
+         <span class="park-link-text"><a class="park-link" href="${parkLink}">Visit Homepage</a></span>
+        </div>
        </div>
-       <span class="park-link-text"><a class="park-link" href="${parkLink}">Visit Homepage</a></span>
       </div>
      </div>`;
      $('.cards-section').append(cardHTML);
     };
-   },
-   error: function(xhr, error) {
-    var errorMessage = xhr.status + ': ' + xhr.statusText;
-    console.log('Error -', error);
-    alert('Error - ' + errorMessage);
    }
   });
  });
