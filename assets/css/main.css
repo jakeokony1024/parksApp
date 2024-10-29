@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: #4CAF50;
+  color: #679259;
 }
 
 .page-content {
@@ -91,7 +91,7 @@ label {
 }
 
 #state-selector {
-  background-color: #4CAF50;
+  background-color: #679259;
   text-shadow: 1px 1px 4px #000000;
   border: none;
   color: whitesmoke;
@@ -103,12 +103,23 @@ label {
   cursor: pointer;
   -webkit-box-shadow: 1px 1px 18px #888888;
           box-shadow: 1px 1px 18px #888888;
-  border-radius: 2px;
-  margin-left: 5px;
+  border-radius: 5px;
+  margin-left: 16px;
 }
+/* 
+potential backgrounds
+#63765d 
+#679259
+#789544
+*/
 
 #states {
   cursor: pointer;
+  padding: 0 1rem;
+  border-radius: 5px;
+  background: #83AEC7;
+  color: #ffff;
+  text-shadow: 0px 1px 1px #000000, 0 0 1px #000000;
 }
 
 .state-selection-container {
@@ -196,6 +207,10 @@ label {
   transform: rotateY(180deg);
 }
 
+.card-inner {
+  transition: transform 1s ease .25s; /* Add transition property */
+}
+
 .card-front, .card-back {
   position: absolute;
   width: 100%;
@@ -214,7 +229,7 @@ label {
 }
 
 .card-front-img-cont {
-  background: #4CAF50;
+  background: #679259;
   height: 300px;
   overflow: hidden;
 }
@@ -225,7 +240,7 @@ label {
 }
 
 .card-back {
-  background-color: #4CAF50;
+  background-color: #679259;
   color: white;
   transform: rotateY(180deg);
 }
@@ -279,7 +294,7 @@ label {
 }
 
 .park-link-text:hover {
-  color: #4CAF50;
+  color: #83AEC7;
 }
 
 .park-link {
@@ -393,7 +408,7 @@ footer {
 }
 
 a {
-  color: #4CAF50;
+  color: #679259;
   text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */
